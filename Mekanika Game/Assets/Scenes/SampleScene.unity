@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3978,7 +3978,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.10124155, y: 8.550731e-10, z: -0.000000017743119, w: 0.99486196}
+  m_LocalRotation: {x: 0.10123865, y: 0, z: 0, w: 0.9948622}
   m_LocalPosition: {x: 6.968, y: 0.519, z: -0.039}
   m_LocalScale: {x: 1, y: 0.97501004, z: 1}
   m_Children:
@@ -4218,6 +4218,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 2771f63a7c5b19a49bc9a3974a84ac95,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: afbbacd05cbebfb4897a71b920523136, type: 2}
     - target: {fileID: -6054422026232399578, guid: 2771f63a7c5b19a49bc9a3974a84ac95,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5969,6 +5974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WinLose: {fileID: 1926883598}
   WinText: {fileID: 205752753}
+  cam: {fileID: 963194225}
 --- !u!136 &1580917466
 CapsuleCollider:
   m_ObjectHideFlags: 0

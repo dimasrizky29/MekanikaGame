@@ -21,13 +21,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'metarig|metarigAction' has import animation
-      warnings that might lower retargeting quality:\nNote: Activate translation
-      DOF on avatar to improve retargeting quality.\n\t'spine' has translation animation
-      that will be discarded.\n\t'spine.003' is inbetween humanoid transforms and
-      has rotation animation that will be discarded.\n\t'thigh.L' has translation
-      animation that will be discarded.\n\t'thigh.R' has translation animation that
-      will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -52,7 +46,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
