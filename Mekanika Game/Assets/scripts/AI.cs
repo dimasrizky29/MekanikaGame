@@ -14,9 +14,11 @@ public class AI : MonoBehaviour
     private Rigidbody rb;
     public float jumpForce = 1;
     public CapsuleCollider col;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         speedAi = 0.2f;
@@ -28,7 +30,9 @@ public class AI : MonoBehaviour
     {
     if (IsGrounded())
     {
-        rb.AddForce(Vector3.up*jumpForce/10, ForceMode.Impulse);
+        rb.AddForce(Vector3.up*jumpForce/5, ForceMode.Impulse);
+            //   StartCoroutine(JumpAnim());
+            anim.SetTrigger("Jump");
     }
         transform.Translate (Vector3.forward*Time.deltaTime*speedAi);//+(Vector3.up*Time.deltaTime*0.1f));
         
@@ -43,6 +47,7 @@ public class AI : MonoBehaviour
     }
     private bool IsGrounded()
     {
+
         return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * .1f/2, groundLayer);
         // return false;
     }

@@ -17,14 +17,16 @@ public class PlayerMove : MonoBehaviour
     public static int saveCoin;
     public GameObject WinLose;
     public TextMeshProUGUI WinText;
-    // Animator anim;
+    public GameObject cam;
+     Animator anim;
+
+    bool limitLeft = false, limitRight = false;
 
     void Start()
     {
         // rb = GetComponent<Rigidbody>();
-        // anim = GetComponent<Animator>();
+         anim = GetComponent<Animator>();
         // col = GetComponent<CapsuleCollider>();
-        
         
         speed = 10f;
         speed += upgrade;
@@ -36,16 +38,35 @@ public class PlayerMove : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.W))
         {
+            anim.SetTrigger("Jump");
             transform.Translate((Vector3.forward*Time.deltaTime*speed) + (Vector3.up*Time.deltaTime*1.5f));
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate (Vector3.left*Time.deltaTime*5f);
+           // anim.SetTrigger("Jump");
+           if(!limitLeft)
+            transform.Rotate (new Vector3(0,Time.deltaTime * -20f,0));
+           // cam.transform.Rotate(new Vector3(0, Time.deltaTime * -10f, 0));
         }
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow) && !limitRight)
         {
-            transform.Translate (Vector3.right*Time.deltaTime*5f);
+            //anim.SetTrigger("Jump");
+            if(!limitRight)
+            transform.Rotate(new Vector3(0, Time.deltaTime * 20f, 0));
         }
+
+        if (transform.rotation.y <= -0.70771068f)
+            limitLeft = true;
+        else
+            limitLeft = false;
+        if (transform.rotation.y >= 0.70771068f)
+            limitRight = true;
+        else
+            limitRight = false;
+
+        print(transform.rotation.y);
+        print(limitLeft);
+
         // Bergerak();
     }
     // void Bergerak()
